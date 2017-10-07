@@ -68,3 +68,9 @@
     Matched line which contating word up:  And when they were only half-way up
     Matched line which contating word up:  They were neither up nor down
     Matched line which contating word down:  They were neither up nor down
+    
+2.6 Awk different flags
+
+    - "-f " is used provide action and pattern from file inside of awk commandline
+    - "-F" is used to give field seperaters. By default it is space
+    - "-v" is used to define variable which used in awk's action like `awk -v number=3 '{print $1, number}'`
