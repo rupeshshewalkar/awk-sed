@@ -6,3 +6,15 @@
 - AWK preinstalled all Linux/Unix OS 
 
 
+### ***2.Working with field,record and Pattern***
+
+ 2.1 Print all lines 
+     
+       awk'{print}' filename.txt  OR awk'{print $0}' 
+ 
+ 2.2 Calculate number of Fields(NF)
+   
+       awk'{ print NF, $0 }'
+       
+ 2.3 
+     
