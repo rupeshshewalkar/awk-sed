@@ -177,6 +177,20 @@ The first example prints out one field, and the second prints out two fields. In
       8 They
 
 
+- FILENAME - The Current Filename Variable
+	
+    The last variable known to regular AWK is "FILENAME", which tells you the name of the file being read.
+    
+      awk '{ print FILENAME,NR,FNR,$0}' fieldseperater.txt multifieldseperater.txt
+      
+      fieldseperater.txt 1 1 rupesh:x:1000:1000:Rupesh Shewalkar:/home/rupesh:/bin/bash
+      fieldseperater.txt 2 2 amit::2000:2000:Amit Shewalkar:/home/amit:/bin/bash
+      fieldseperater.txt 3 3 amol::2000:2000:Amol Shewalkar:/home/amol:/bin/bash
+      fieldseperater.txt 4 4 kalyani:x:2000:2000:Kalyani Shewalkar:/home/kalyani:/bin/bash
+      multifieldseperater.txt 5 1 one,two,three
+      multifieldseperater.txt 6 2 one two three
+      multifieldseperater.txt 7 3 one:two:three
+
 
 
 
