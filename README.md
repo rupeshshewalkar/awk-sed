@@ -74,3 +74,23 @@
     - "-f " is used provide action and pattern from file inside of awk commandline
     - "-F" is used to give field seperaters. By default it is space
     - "-v" is used to define variable which used in awk's action like `awk -v number=3 '{print $1, number}'`
+    
+ ###***3. Specifying field and record separators with variables***
+ 
+- In awk, two important patterns are specified by the keywords "BEGIN" and "END". These two words specify actions to be taken before any lines are read, and after the last line is read. The AWK program below:
+
+
+      awk 'BEGIN { print "---------This start of file---------------" } { print $0 } END { print "-------This end of file------------------" }' dukeyourk.txt
+      
+      ---------This start of file---------------
+      The grand old Duke of York
+      He had ten thousand men
+      He marched them up to the top of the hill
+      And he marched them down again
+      And when they were up they were up
+      And when they were down they were down
+      And when they were only half-way up
+      They were neither up nor down
+      -------This end of file------------------
+
+-
