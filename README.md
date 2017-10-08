@@ -161,4 +161,22 @@ The first example prints out one field, and the second prints out two fields. In
       awk 'BEGIN{ FS=",";RS="!"; ORS="," } { print $2 }' outputrecordseperater.txt
   	  two,six,nine,345,
     
+- NR- The Number of Records Variable
+
+	Another useful variable is "NR". This tells you the number of records, or the line number. You can use AWK to only examine certain lines.
+    
+   	 awk '{ print NR,$1}' dukeyourk.txt
+     
+      1 The
+      2 He
+      3 He
+      4 And
+      5 And
+      6 And
+      7 And
+      8 They
+
+
+
+
 
