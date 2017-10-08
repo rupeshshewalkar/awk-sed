@@ -221,6 +221,17 @@ Print second last column value:
     up
     down
 
+ it is not limit to read value from field, you can assign new value to field like:
 
-
+   
+      awk '{ $2="two"; print }' dukeyourk.txt
+      
+      The two old Duke of York
+      He two ten thousand men
+      He two them up to the top of the hill
+      And two marched them down again
+      And two they were up they were up
+      And two they were down they were down
+      And two they were only half-way up
+      They two neither up nor down
 
