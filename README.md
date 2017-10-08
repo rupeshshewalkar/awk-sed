@@ -93,4 +93,19 @@
       They were neither up nor down
       -------This end of file------------------
 
+- FS - The Input Field Separator Variable:
+  
+  AWK can be used to parse many system administration files. However, many of these files do not have whitespace as a separator. as an example, the password file uses colons. You can easily change the field separator character to be a colon using the "-F" command line option. The following command will print out accounts that don't have passwords:
+
+	  awk -F: '{ if ( $2=="") print $1 " : No password set for this user" }' fieldseperater.txt
+      amit : No password set for this user
+      amol : No password set for this user
+
+
+There is a way to do this without the command line option. The variable "FS" can be set like any variable, and has the same function as the "-F" command line option. The following is a script that has the same function as the one above.
+
+    awk  'BEGIN{ FS=":"}{ if ( $2=="") print $1 " : No password set for this user" }' fieldseperater.txt
+    amit : No password set for this user
+    amol : No password set for this user
+
 -
