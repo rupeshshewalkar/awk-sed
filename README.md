@@ -75,7 +75,7 @@
     - "-F" is used to give field seperaters. By default it is space
     - "-v" is used to define variable which used in awk's action like `awk -v number=3 '{print $1, number}'`
     
- ###***3. Specifying field and record separators with variables***
+ ### ***3. Specifying field and record separators with variables***
  
 - In awk, two important patterns are specified by the keywords "BEGIN" and "END". These two words specify actions to be taken before any lines are read, and after the last line is read. The AWK program below:
 
@@ -132,3 +132,15 @@ The first example prints out one field, and the second prints out two fields. In
         amit,,2000,2000
         amol,,2000,2000
         kalyani,x,2000,2000
+        
+- RS - The Record Separator Variable
+
+  Normally, AWK reads one line at a time, and breaks up the line into fields. You can set the "RS" variable to change AWK's definition of a "line". If you set it to an empty string, then AWK will read the entire file into memory. You can combine this with changing the "FS" variable. This example treats each line as a field, and prints out the second and third line
+
+      awk 'BEGIN { RS=""; FS"\n" } { print $1,$2,$3,$4 }' recordseperater.txt
+      
+      Rupesh Shewalkar Kharadi Pune
+      Amit Shewalkar Vashi Mumbai
+      Amol Shewalkar susgoan Pune
+      Kalyani Shewalkar Vadgaon Pune
+
