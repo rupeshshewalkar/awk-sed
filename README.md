@@ -126,7 +126,7 @@ and
 		print $2, $3
 The first example prints out one field, and the second prints out two fields. In the first case, the two positional parameters are concatenated together and output without a space. In the second case, AWK prints two fields, and places the output field separator between them. Normally this is a space, but you can change this by modifying the variable "OFS".
 
- 		awk 'BEGIN{ FS=":"; OFS="," } { print $1,$2,$3,$4 }' fieldseperater.txt
+ 	awk 'BEGIN{ FS=":"; OFS="," } { print $1,$2,$3,$4 }' fieldseperater.txt
         
         rupesh,x,1000,1000
         amit,,2000,2000
