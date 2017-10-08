@@ -143,4 +143,22 @@ The first example prints out one field, and the second prints out two fields. In
       Amit Shewalkar Vashi Mumbai
       Amol Shewalkar susgoan Pune
       Kalyani Shewalkar Vadgaon Pune
+      
+- ORS - The Output Record Separator Variable
+
+	The default output record separator is a newline, like the input. This can be set to be a newline and carriage return.
+    
+    Example Without ORS Separator:
+    
+      awk 'BEGIN{ FS=",";RS="!" } { print $2 }' outputrecordseperater.txt
+      two
+      six
+      nine
+      345
+   
+    Example With ORS Separator:
+    
+      awk 'BEGIN{ FS=",";RS="!"; ORS="," } { print $2 }' outputrecordseperater.txt
+  	  two,six,nine,345,
+    
 
