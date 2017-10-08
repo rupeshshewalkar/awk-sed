@@ -191,6 +191,8 @@ The first example prints out one field, and the second prints out two fields. In
       multifieldseperater.txt 6 2 one two three
       multifieldseperater.txt 7 3 one:two:three
 
+### ***3. Using Built-in variable***
+
 
 
 
