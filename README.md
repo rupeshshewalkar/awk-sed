@@ -107,5 +107,13 @@
       awk  'BEGIN{ FS=":"}{ if ( $2=="") print $1 " : No password set for this user" }' fieldseperater.txt
       amit : No password set for this user
       amol : No password set for this user
+ 
+ Example of multiple Input Field Separator 
+ 
+      awk 'BEGIN{ FS="[,: ]" } {  print $2 " : " $0}' multifieldseperater.txt
+      two : one,two,three
+      two : one two three
+      two : one:two:three
+
 
 -
