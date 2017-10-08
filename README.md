@@ -193,6 +193,34 @@ The first example prints out one field, and the second prints out two fields. In
 
 ### ***3. Using Built-in variable***
 
+As we know NF (The Number of Fields Variable) useful to know how many fields are on a line. Which also help to find last column from file i.e
+
+Print last column value:
+
+     awk '{ print $(NF) }' dukeyourk.txt
+    
+    York
+    men
+    hill
+    again
+    up
+    down
+    up
+    down
+
+Print second last column value:
+
+    awk '{ print $(NF -1) }' dukeyourk.txt
+    
+    York
+    men
+    hill
+    again
+    up
+    down
+    up
+    down
+
 
 
 
