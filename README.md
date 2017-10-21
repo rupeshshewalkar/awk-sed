@@ -234,4 +234,44 @@ Print second last column value:
       And two they were down they were down
       And two they were only half-way up
       They two neither up nor down
+      
+      
+### *** 4.Regex in AWK ***
 
+A regular expression enclosed in slashes (`/') is an awk pattern that matches every input record whose text belongs to that set.For example, this prints the second field of each record that contains the three characters `foo' anywhere in it:
+
+          $ awk '/foo/ { print $2 }' BBS-list
+          -| 555-1234
+          -| 555-6699
+          -| 555-6480
+          -| 555-2127
+
+Regular expressions can also be used in matching expressions. These expressions allow you to specify the string to match against; it need not be the entire current input record. The two operators, `~' and `!~', perform regular expression comparisons. Expressions using these operators can be used as patterns or in if, while, for, and do statements.
+
+exp ~ /regexp/
+
+This is true if the expression exp (taken as a string) is matched by regexp. The following example matches, or selects, all input records with the upper-case letter `J' somewhere in the first field:
+    $ awk '$1 ~ /J/' inventory-shipped
+    -| Jan  13  25  15 115
+    -| Jun  31  42  75 492
+    -| Jul  24  34  67 436
+    -| Jan  21  36  64 620
+
+So does this:
+
+	awk '{ if ($1 ~ /J/) print }' inventory-shipped
+
+exp !~ /regexp/
+
+
+This is true if the expression exp (taken as a character string) is not matched by regexp. The following example matches, or selects, all input records whose first field does not contain the upper-case letter `J':
+
+          $ awk '$1 !~ /J/' inventory-shipped
+          -| Feb  15  32  24 226
+          -| Mar  15  24  34 228
+          -| Apr  31  52  63 420
+          -| May  16  34  29 208
+          ...
+
+
+When a regexp is written enclosed in slashes, like /foo/, we call it a regexp constant, much like 5.27 is a numeric constant, and "foo" is a string constant.
