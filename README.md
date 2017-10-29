@@ -300,15 +300,11 @@ Note: Make sure that you pass exact data types when using corresponding formats 
 
 **PADDING BETWEEN COLUMNS USING AWK PRINTF**
 
--n --Pad n spaces on right hand side of a column.
-
-n --Pad n spaces on left hand side of a column.
-
-.m --Add zeros on left side.
-
--n.m --Pad n spaces right hand side and add m zeros before that number.
-
-n.m --Pad n spaces left hand side and add m zeros before that.
+      -n --Pad n spaces on right hand side of a column.
+      n --Pad n spaces on left hand side of a column.
+      .m --Add zeros on left side.
+      -n.m --Pad n spaces right hand side and add m zeros before that number.
+      n.m --Pad n spaces left hand side and add m zeros before that.
 
 
 Example without printf 
