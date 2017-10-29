@@ -278,3 +278,54 @@ This is true if the expression exp (taken as a character string) is not matched 
 When a regexp is written enclosed in slashes, like /foo/, we call it a regexp constant, much like 5.27 is a numeric constant, and "foo" is a string constant.
 
 
+### ***5. Formatting output of AWK with printf***
+
+printf function help to formatting output of AWK,mainly controlling width of output columns, precision specifier on columns & many other stuff. printf function same as "C programming" langauge. 
+
+Syntax:
+  
+       awk '{printf "format", Arguments}' filename
+       
+The printf can be useful when specifying data type such as integer, decimal, octal etc. Below are the list of some data types which are available in AWK
+
+        %i or d --Decimal
+        %o --Octal
+        %x --hex
+        %c --ASCII number character
+        %s --String
+        %f --floating number
+        
+Note: Make sure that you pass exact data types when using corresponding formats as shown below. If you pass a string to a decimal formatting, it will print just zero instead of that string.
+
+
+**PADDING BETWEEN COLUMNS USING AWK PRINTF**
+
+-n --Pad n spaces on right hand side of a column.
+
+n --Pad n spaces on left hand side of a column.
+
+.m --Add zeros on left side.
+
+-n.m --Pad n spaces right hand side and add m zeros before that number.
+
+n.m --Pad n spaces left hand side and add m zeros before that.
+
+
+Example without printf 
+
+      awk '{ print $1,$2,$3,$5}' printfoutput.txt                                 
+      
+      Rupesh 163 123 567.212432                                                       
+      Amit 167 21 678.2314523                                                         
+      Kalyani 4 222 92.7887                                                           
+      Amol 135 132 999.423
+ 
+Example with Printf 
+
+      awk '{ printf "|%-25s|%-7.3d|%5.3d|%3.2f\n", $1,$2,$3,$5}' printfoutput.txt 
+      |Rupesh                   |163    |  123|567.21                                 
+      |Amit                     |167    |  021|678.23                                 
+      |Kalyani                  |004    |  222|92.79                                  
+      |Amol                     |135    |  132|999.42
+
+
